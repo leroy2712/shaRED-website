@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col=sm-3"></div>
+  <div class="col=sm-6">
+    <br>
+    <br>
+    <br>
+    <div class="text-center">
+      <button type="button" class="btn btn-danger" id="request" data-toggle="modal" data-target="#myModal">REQUEST BLOOD</button>
+
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title heading">MAKE BLOOD DONATION REQUEST</h4>
+            </div>
+            <div class="modal-body">
+
+              <form (submit)="makeRequest(hospital.value, type.value, condition.value)">
+                <div class="form-group">
+                  <label for="hospitals" class="heading">HOSPITAL:</label>
+                  <select class="form-control" #hospital name="hospital" [(ngModel)]="request.hospital">
+                    <option>Mbagathi District Hospital</option>
+                    <option>Aga khan Hospital</option>
+                    <option>Avenue Hospital</option>
+                    <option>Guru Nanak Hospital</option>
+                    <option>Gertrude's Children's Hospital, Muthaiga</option>
+                    <option>Gertrude's Children's Hospital, Lavington</option>
+                    <option>Karen Hospital</option>
+                    <option>Kenyatta National Hospital</option>
+                    <option>Metropolitan Hospital</option>
+                    <option>Nairobi Hospital</option>
+                    <option>Bliss GVS Healthcare Embakasi</option>
+                    <option>Coptic Hospital</option>
+                    <option>Nairobi Women's Hospital</option>
+                    <option>MP Shah Hospital</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="types" class="heading">BLOOD TYPE:</label>
+                  <select class="form-control" #type name="type" [(ngModel)]="request.type">
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="condition" class="heading">CONDITION:</label>
+                  <select class="form-control" #condition name="condition" [(ngModel)]="request.condition">
+                    <option>Critical</option>
+                    <option>Non-Critical</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-default" id="sendRequest">SUBMIT</button>
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onClick()">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col=sm-3"></div>
+</div>
